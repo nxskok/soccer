@@ -1,0 +1,21 @@
+# command line soccer stuff
+
+# get live
+
+cd ~/Documents/r-projects/soccerway-live/ ; Rscript -e "rmarkdown::render('get-live.Rmd')" ; brave-browser get-live.html
+
+# update ratings
+
+cd ~/Documents/r-projects/ratings ; Rscript recency_next.R
+cd ~/Documents/r-projects/scoresway/ ; Rscript get_rateable.R
+cd ~/Documents/r-projects/ratings ; Rscript recency_next.R
+cd ~/Documents/r-projects/ratings ; Rscript display_posteriors.R
+
+# update rating ranks
+
+cd ~/Documents/r-projects/ratings ; Rscript rating_rank.R
+
+# get all matches
+
+cd ~/Documents/r-projects/scoresway/ ; Rscript by_match.R
+
